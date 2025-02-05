@@ -1,0 +1,75 @@
+
+.wpmpw-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+
+.wpmpw-form input[type="text"],
+.wpmpw-form input[type="file"],
+.wpmpw-form input[type="number"],
+.wpmpw-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.wpmpw-form input[type="submit"] {
+    background: #0073aa;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.wpmpw-form input[type="submit"]:hover {
+    background: #005177;
+}
+
+
+.wpmpw-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.wpmpw-table th, .wpmpw-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.wpmpw-table th {
+    background: #0073aa;
+    color: white;
+}
+
+
+.wpmpw-buttons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.wpmpw-buttons .edit {
+    background: #28a745;
+}
+
+.wpmpw-buttons .delete {
+    background: #dc3545;
+}
+.page-numbers{
+    margin-right: 5px;
+}
