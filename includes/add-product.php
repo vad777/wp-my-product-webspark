@@ -31,7 +31,7 @@ function wpmpw_add_product_content() {
         </p>
         <p>
             <label for="product_quantity">Quantity</label>
-            <input type="number" name="product_quantity" required>
+            <input type="number" name="product_quantity"  required>
         </p>
         <p>
             <label for="product_description">Description</label>
@@ -90,6 +90,9 @@ function wpmpw_handle_product_submission() {
         }
 
         echo '<p>The product has been successfully added and is awaiting moderation.</p>';
+
         wpmpw_send_admin_email($product_id);
+
+        do_action('wpmpw_send_admin_email', $product_id);
     }
 }

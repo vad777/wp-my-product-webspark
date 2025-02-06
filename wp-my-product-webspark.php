@@ -38,16 +38,12 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'WP_MY_PRODUCT_WEBSPARK_VERSION', '1.0.0' );
 
 
-function wpmpw_check_woocommerce_active()
-{
+function wpmpw_check_woocommerce_active() {
     if (!class_exists('WooCommerce')) {
-        add_action('admin_notices', function () {
-            echo '<div class="error"><p>The <strong>WP My Product Webspark</strong> plugin requires active WooCommerce!</p></div>';
-        });
         deactivate_plugins(plugin_basename(__FILE__));
+        wp_die(__('WooCommerce must be installed and active!', 'wpmpw'));
     }
 }
-
 register_activation_hook(__FILE__, 'wpmpw_check_woocommerce_active');
 
 
@@ -63,7 +59,7 @@ add_filter('woocommerce_account_menu_items', 'wpmpw_add_my_account_menu_items');
 
 include_once plugin_dir_path(__FILE__) . 'includes/add-product.php';
 include_once plugin_dir_path(__FILE__) . 'includes/my-products.php';
-include_once plugin_dir_path(__FILE__) . 'includes/admin-email.php';
+require_once plugin_dir_path(__FILE__) . 'includes/email-init.php';
 
 
 

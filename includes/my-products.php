@@ -24,7 +24,7 @@ function wpmpw_my_products_content() {
     }
 
     $user_id = get_current_user_id();
-    $products_per_page = 7;
+    $products_per_page = 4;
 
     $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
 
