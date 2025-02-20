@@ -25,8 +25,10 @@ function wpmpw_my_products_content() {
 
     $user_id = get_current_user_id();
     $products_per_page = 4;
-
-    $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+    
+   if (preg_match('/my-products\/page\/([0-9]+)/', $_SERVER['REQUEST_URI'], $matches)) {
+        $paged = absint($matches[1]);
+    }
 
     $args = array(
         'post_type'      => 'product',
