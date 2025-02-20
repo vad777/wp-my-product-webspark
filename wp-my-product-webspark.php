@@ -84,14 +84,7 @@ function wpmpw_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'wpmpw_enqueue_styles');
 
 
-function wpmpw_add_pagination_rewrite_rules() {
-    add_rewrite_rule(
-        '^my-account/my-products/page/([0-9]+)/?$',
-        'index.php?pagename=my-account/my-products&paged=$matches[1]',
-        'top'
-    );
-}
-add_action('init', 'wpmpw_add_pagination_rewrite_rules');
+
 
 
 
