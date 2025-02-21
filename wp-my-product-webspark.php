@@ -62,7 +62,6 @@ include_once plugin_dir_path(__FILE__) . 'includes/my-products.php';
 require_once plugin_dir_path(__FILE__) . 'includes/email-init.php';
 
 
-
 function wpmpw_delete_product() {
     if (isset($_GET['delete_product']) && is_user_logged_in()) {
         $product_id = intval($_GET['delete_product']);
@@ -80,29 +79,15 @@ add_action('template_redirect', 'wpmpw_delete_product');
 
 function wpmpw_enqueue_styles() {
     wp_enqueue_style('wpmpw-style', plugin_dir_url(__FILE__) . 'assets/css/style.css');
+    wp_enqueue_script('wpmpw-script', plugin_dir_url(__FILE__) . 'assets/js/script.js');
 }
 add_action('wp_enqueue_scripts', 'wpmpw_enqueue_styles');
 
-
-function wpmpw_add_pagination_rewrite_rules() {
-    add_rewrite_rule(
-        '^my-account/my-products/page/([0-9]+)/?$',
-        'index.php?pagename=my-account/my-products&paged=$matches[1]',
-        'top'
-    );
-}
-add_action('init', 'wpmpw_add_pagination_rewrite_rules');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && isset($query->query_vars['woocommerce_my_account_endpoint'])
+        && $query->query_vars['woocommerce_my_account_endpoint'] === 'my-products') {
+        $paged = get_correct_paged();
+        $query->set('paged', $paged);
+        $query->set('post_type', 'product');
+    }
+});
