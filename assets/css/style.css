@@ -114,11 +114,7 @@
     height: 40px;
 }
 
-.product_price_quantity{
+.product_price_quantity {
     display: flex;
     justify-content: flex-start;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
