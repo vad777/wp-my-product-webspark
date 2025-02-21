@@ -90,4 +90,25 @@ add_action('pre_get_posts', function ($query) {
         $query->set('paged', $paged);
         $query->set('post_type', 'product');
     }
+<<<<<<< HEAD
 });
+=======
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> origin/main
