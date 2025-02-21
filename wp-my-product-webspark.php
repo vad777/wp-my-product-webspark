@@ -27,7 +27,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+    die;
 }
 
 /**
@@ -90,25 +90,4 @@ add_action('pre_get_posts', function ($query) {
         $query->set('paged', $paged);
         $query->set('post_type', 'product');
     }
-<<<<<<< HEAD
 });
-=======
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/main
