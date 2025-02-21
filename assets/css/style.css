@@ -49,7 +49,7 @@
 }
 
 .wpmpw-table th {
-    background: #0073aa;
+    background: #0073aa!important;
     color: white;
 }
 
@@ -72,4 +72,49 @@
 }
 .page-numbers{
     margin-right: 5px;
+    text-decoration: none!important;
+}
+.current{
+     border-bottom: 1px solid;
+    font-weight: 600;
+    font-size: 18px;
+}
+.edit-title{
+    text-align: center;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 4px;
+}
+
+.quantity-selector button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity-selector input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.quantity-selector button:hover {
+    background-color: #ddd;
+}
+#product_quantity{
+    width: 50px;
+    height: 40px;
+}
+
+.product_price_quantity{
+    display: flex;
+    justify-content: flex-start;
 }
