@@ -21,6 +21,7 @@ class WPMPW_Admin_Email extends WC_Email {
 
         $this->template_html  = 'emails/admin-new-product.php';
         $this->template_plain = 'emails/plain/admin-new-product.php';
+        $this->template_base  = plugin_dir_path(dirname(__FILE__)) . 'templates/';
 
         parent::__construct();
     }
@@ -42,20 +43,33 @@ class WPMPW_Admin_Email extends WC_Email {
     }
 
     public function get_content_html() {
-        return wc_get_template_html($this->template_html, array(
+        $html = wc_get_template_html($this->template_html, array(
             'email_heading' => $this->get_heading(),
             'product_title' => $this->placeholders['{product_title}'],
             'product_link'  => $this->placeholders['{product_link}'],
             'email'         => $this,
-        ));
+        ), '', $this->template_base);
+
+        return $html;
     }
 
+
     public function get_content_plain() {
-        return wc_get_template_html($this->template_plain, array(
-            'email_heading' => $this->get_heading(),
-            'product_title' => $this->placeholders['{product_title}'],
-            'product_link'  => $this->placeholders['{product_link}'],
-            'email'         => $this,
-        ));
+        $template_path = $this->template_base . $this->template_plain;
+
+        if (!file_exists($template_path)) {
+            return 'Error: template plain not found.';
+        }
+
+        $email_heading = $this->get_heading();
+        $product_title = $this->placeholders['{product_title}'] ?? 'Unknown Product';
+        $product_link  = $this->placeholders['{product_link}'] ?? '#';
+
+        ob_start();
+        include $template_path;
+        return ob_get_clean();
     }
+
+
+
 }

@@ -75,7 +75,7 @@ function wpmpw_add_product_content() {
 
         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
         <p>
-            <input type="submit" name="wpmpw_save_product" value="<?php echo $is_edit ? 'Сохранить изменения' : 'Добавить товар'; ?>">
+            <input type="submit" name="wpmpw_save_product" value="<?php echo $is_edit ? 'Save changes' : 'Add product'; ?>">
         </p>
     </form>
     <?php
@@ -140,6 +140,9 @@ function wpmpw_handle_product_submission() {
         wp_cache_delete($product_id, 'posts');
 
         nocache_headers();
+
+        do_action('wpmpw_send_admin_email', $product_id);
+
         wp_safe_redirect(add_query_arg(['product_id' => $product_id, 'updated' => '1'], wc_get_account_endpoint_url('add-product')));
         exit;
     }
