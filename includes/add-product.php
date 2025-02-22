@@ -44,17 +44,17 @@ function wpmpw_add_product_content() {
     <form class="wpmpw-form" method="post" enctype="multipart/form-data">
         <?php wp_nonce_field('wpmpw_save_product', 'wpmpw_nonce'); ?>
 
-            <p>
-                <label for="product_name">Product name</label>
-                <input type="text" name="product_name" value="<?php echo esc_attr($product_name); ?>" required>
-            </p>
+        <p>
+            <label for="product_name">Product name</label>
+            <input type="text" name="product_name" value="<?php echo esc_attr($product_name); ?>" required>
+        </p>
 
         <div class="product_price_quantity" >
             <div style="width: 40%; margin-right: 20px">
                 <label for="product_price">Price</label>
                 <input type="number" name="product_price" value="<?php echo esc_attr($product_price); ?>" required>
             </div>
-             <div style="width: 40%">
+            <div style="width: 40%">
                 <label for="product_quantity">Quantity</label>
                 <div class="quantity-selector">
                     <button type="button" class="quantity-minus">−</button>
