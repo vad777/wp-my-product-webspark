@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86893637-ae0c-49b9-9daf-abedec0764f9" name="Changes" comment="" />
+    <list default="true" id="86893637-ae0c-49b9-9daf-abedec0764f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/add-product.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/add-product.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +60,7 @@
       <workItem from="1740156346545" duration="941000" />
       <workItem from="1740157460288" duration="763000" />
       <workItem from="1740208213059" duration="28000" />
-      <workItem from="1740225083642" duration="341000" />
+      <workItem from="1740225083642" duration="593000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1738773345789</created>
