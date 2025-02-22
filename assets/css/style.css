@@ -119,3 +119,19 @@
     justify-content: flex-start;
 }
 
+#product_quantity {
+    -moz-appearance: textfield;
+}
+
+
+#product_quantity::-webkit-outer-spin-button,
+#product_quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+#product_quantity::-ms-clear,
+#product_quantity::-ms-reveal {
+    display: none;
+}
