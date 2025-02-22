@@ -140,6 +140,8 @@ function wpmpw_handle_product_submission() {
         wp_cache_delete($product_id, 'posts');
 
         nocache_headers();
+        do_action('wpmpw_send_admin_email', $product_id);
+        
         wp_safe_redirect(add_query_arg(['product_id' => $product_id, 'updated' => '1'], wc_get_account_endpoint_url('add-product')));
         exit;
     }
