@@ -95,11 +95,11 @@ function wpmpw_handle_product_submission() {
     $product_id = isset($_POST['product_id']) ? absint($_POST['product_id']) : 0;
     $is_edit = $product_id > 0;
 
+    $product_name = isset($_POST['product_name']) ? sanitize_text_field($_POST['product_name']) : '';
+    $product_price = isset($_POST['product_price']) ? floatval($_POST['product_price']) : 0;
+    $product_quantity = isset($_POST['product_quantity']) ? intval($_POST['product_quantity']) : 1;
+    $product_description = isset($_POST['product_description']) ? wp_kses_post($_POST['product_description']) : '';
 
-    $product_name = sanitize_text_field($_POST['product_name']);
-    $product_price = floatval($_POST['product_price']);
-    $product_quantity = intval($_POST['product_quantity']);
-    $product_description = wp_kses_post($_POST['product_description']);
 
     if ($is_edit) {
         $product_data = array(
